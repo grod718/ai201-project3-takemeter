@@ -1,0 +1,101 @@
+{
+  "baseline": {
+    "model": "llama-3.3-70b-versatile (Groq, zero-shot)",
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "per_class": {
+      "analysis": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "hot_take": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "question": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "unparseable_pct": 0.0
+  },
+  "fine_tuned": {
+    "model": "distilbert-base-uncased (fine-tuned)",
+    "hyperparameters": {
+      "epochs": 3,
+      "learning_rate": 2e-05,
+      "batch_size": 16
+    },
+    "accuracy": 0.8947368421052632,
+    "macro_f1": 0.8842592592592592,
+    "per_class": {
+      "analysis": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "hot_take": {
+        "precision": 0.7777777777777778,
+        "recall": 1.0,
+        "f1": 0.875
+      },
+      "question": {
+        "precision": 1.0,
+        "recall": 0.6363636363636364,
+        "f1": 0.7777777777777778
+      }
+    }
+  },
+  "confusion_matrix": [
+    [
+      13,
+      0,
+      0
+    ],
+    [
+      0,
+      14,
+      0
+    ],
+    [
+      0,
+      4,
+      7
+    ]
+  ],
+  "confusion_matrix_labels": [
+    "analysis",
+    "hot_take",
+    "question"
+  ],
+  "test_set_size": 38,
+  "wrong_predictions_sample": [
+    {
+      "text": "I'm seeing a lot of 'hallucination' from my fine-tuned model on topics outside its training data. Is there a standard technique to make models say 'I don't know' more reliably?",
+      "true_label": "question",
+      "predicted": "hot_take",
+      "confidence": 0.38696038722991943
+    },
+    {
+      "text": "Has anyone compared the speed of different inference engines (vLLM, TGI, Ollama) head to head? Looking for real benchmarks on consumer hardware.",
+      "true_label": "question",
+      "predicted": "hot_take",
+      "confidence": 0.4277096688747406
+    },
+    {
+      "text": "I'm trying to choose between Pinecone, Weaviate, and Chroma for a RAG application. What are the actual practical differences for a startup at small scale?",
+      "true_label": "question",
+      "predicted": "hot_take",
+      "confidence": 0.38184380531311035
+    },
+    {
+      "text": "Has anyone built a production RAG system that handles tables and structured data well? Text chunking seems to destroy table structure.",
+      "true_label": "question",
+      "predicted": "hot_take",
+      "confidence": 0.47404301166534424
+    }
+  ]
+}
