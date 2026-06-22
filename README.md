@@ -200,4 +200,4 @@ python scripts/check_dataset.py
 python scripts/manual_entry.py
 ```
 
-Fine-tuning runs in Google Colab — see `notebooks/` for the link.
+Fine-tuning runs in Google Colab: https://colab.research.google.com/drive/1HhlyyFmo6Q_iIk_iSox2iEQQpjugIxuo?authuser=2#
